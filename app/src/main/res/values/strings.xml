@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">E-com Plus</string>
+    <string name="e_com_plus">E-com Plus</string>
+    <string name="welcomes_you">welcomes you..</string>
+    <string name="signup">SignUp</string>
+    <string name="login">Login</string>
+    <string name="skip_for_now">Skip for now</string>
+    <string name="enter_your_user_id">Enter your email</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="title_activity_homepage">Homepage</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Gaurav Kumar</string>
+    <string name="nav_header_subtitle">gauti6906@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Categories</string>
+    <string name="menu_slideshow">My Orders</string>
+    <string name="menu_tools">My Wishlist</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send Bug Report</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="date_of_birth_dd_mm_yyyy">Date of birth (DD/MM/YYYY)</string>
+    <string name="cart">cart</string>
+    <string name="menu_help">Help Centre</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
