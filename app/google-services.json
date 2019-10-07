@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "438187507252",
+    "firebase_url": "https://e-complus.firebaseio.com",
+    "project_id": "e-complus",
+    "storage_bucket": "e-complus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438187507252:android:47d59a92b4363c21b15461",
+        "android_client_info": {
+          "package_name": "gaurav.e_complus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438187507252-t7bd8sfr3pdhs6jbicq7gsjvcn661cbo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "gaurav.e_complus",
+            "certificate_hash": "833067cbeaccdf4c918c2da13ae97ea541985992"
+          }
+        },
+        {
+          "client_id": "438187507252-m0s0cnml3pmh1g8d1ok5535ft1jiurj7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKo5pI52fMd0mnqO3hED8tKVV4qySWCcM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438187507252-m0s0cnml3pmh1g8d1ok5535ft1jiurj7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

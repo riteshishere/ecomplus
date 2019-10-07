@@ -8,15 +8,15 @@
     tools:context=".Login">
 
     <EditText
-        android:id="@+id/userid"
+        android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="50dp"
         android:ems="10"
-        android:hint="@string/enter_your_user_id"
-        android:inputType="textPersonName"
+        android:hint="@string/enter_phone_number"
+        android:inputType="phone"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         tools:ignore="autofill" />
