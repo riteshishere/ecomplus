@@ -127,7 +127,7 @@ public class Signup extends AppCompatActivity {
                 else{
                     Toast.makeText(Signup.this, "This "+ inputPhone +" already exists.", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
-                    Toast.makeText(Signup.this, "Please try again using another combination.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Signup.this, "Please try again using another number.", Toast.LENGTH_SHORT).show();
                 }
             }
 
