@@ -108,29 +108,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-/*
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (userid.getText().toString().isEmpty()) {
-                    Toast.makeText(Login.this, "Please enter user id.", Toast.LENGTH_SHORT).show();
-                }
-                else if (pass.getText().toString().isEmpty()){
-                    Toast.makeText(Login.this, "Please enter password.", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    String name=userid.getText().toString().trim();
-                    Intent intent=new Intent(Login.this,Homepage.class);
-                    startActivity(intent);
-                    Toast.makeText(Login.this, "Welcome "+name+" !", Toast.LENGTH_SHORT).show();
 
-                    SharedPreferences.Editor editor=getSharedPreferences(PREF,MODE_PRIVATE).edit();
-                    editor.putString("user",name);
-                    editor.commit();
-                }
-            }
-        });
-*/
 
     }
 }

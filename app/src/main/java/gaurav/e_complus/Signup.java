@@ -44,22 +44,8 @@ public class Signup extends AppCompatActivity {
         dob= (EditText) findViewById(R.id.dob);
         btn= (Button) findViewById(R.id.btn);
         loadingBar = new ProgressDialog(this);
-/*
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if ((name.getText().toString().isEmpty())||(userid.getText().toString().isEmpty())||
-                        (pass.getText().toString().isEmpty())||(phone.getText().toString().isEmpty())||
-                        (dob.getText().toString().isEmpty())) {
-                    Toast.makeText(Signup.this, "Please enter all details.", Toast.LENGTH_SHORT).show();
-                }
-                else {
 
 
-                }
-            }
-        });
-*/
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
