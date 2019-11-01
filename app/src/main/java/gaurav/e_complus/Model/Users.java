@@ -1,15 +1,16 @@
 package gaurav.e_complus.Model;
 
 public class Users {
-    private String Name, Pass, Phone;
+    private String Name, Pass, Phone, Email;
 
     public Users() {
     }
 
-    public Users(String name, String pass, String phone) {
+    public Users(String name, String pass, String phone, String email) {
         Name = name;
         Pass = pass;
         Phone = phone;
+        Email = email;
     }
 
     public String getName() {
@@ -34,5 +35,13 @@ public class Users {
 
     public void setPhone(String phone) {
         Phone = phone;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 }

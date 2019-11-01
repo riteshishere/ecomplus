@@ -1,16 +1,17 @@
 package gaurav.e_complus;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,6 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import gaurav.e_complus.Model.Users;
+import gaurav.e_complus.Prevalent.Prevalent;
+import io.paperdb.Paper;
 
 public class Login extends AppCompatActivity {
 
@@ -26,7 +29,7 @@ public class Login extends AppCompatActivity {
     private Button btn;
     public static final String PREF="";
     private ProgressDialog loadingBar;
-
+    private CheckBox chkBoxRememberMe ;
     private String parentDbName = "Users";
 
     @Override
@@ -42,15 +45,16 @@ public class Login extends AppCompatActivity {
         pass= (EditText) findViewById(R.id.pass);
         btn= (Button) findViewById(R.id.btn);
         loadingBar = new ProgressDialog(this);
-
+        chkBoxRememberMe = (CheckBox) findViewById(R.id.remember_me_chk);
+        Paper.init(this);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (phone.getText().toString().isEmpty()) {
-                    Toast.makeText(Login.this, "Please enter Phone Number.", Toast.LENGTH_SHORT).show();
+                if ((phone.getText().toString().isEmpty())||(pass.getText().toString().isEmpty())) {
+                    Toast.makeText(Login.this, "Please fill all details.", Toast.LENGTH_SHORT).show();
                 }
-                else if (pass.getText().toString().isEmpty()){
-                    Toast.makeText(Login.this, "Please enter password.", Toast.LENGTH_SHORT).show();
+                else if(phone.getText().toString().length()!=10){
+                    Toast.makeText(Login.this, "Please enter valid mobile number.", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     loginUser();
@@ -70,6 +74,7 @@ public class Login extends AppCompatActivity {
             }
 
             private void allowAccessToAccount(final String inputPhone, final String inputPass) {
+
                 final DatabaseReference RootRef;
                 RootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -81,10 +86,19 @@ public class Login extends AppCompatActivity {
 
                             if(userData.getPhone().equals(inputPhone)){
                                 if(userData.getPass().equals(inputPass)){
+                                    if (chkBoxRememberMe.isChecked()){
+                                        Paper.book().write(Prevalent.userPhoneKey,inputPhone);
+                                        Paper.book().write(Prevalent.userPasswordKey,inputPass);
+                                    }
+                                    Paper.book().write(Prevalent.userName,userData.getName());
+
                                     Toast.makeText(Login.this, "Welcome "+userData.getName()+" !", Toast.LENGTH_SHORT).show();
                                     loadingBar.dismiss();
 
+
                                     Intent intent=new Intent(Login.this,Homepage.class);
+                                    intent.putExtra("user",userData.getName());
+                                    intent.putExtra("phone",userData.getPhone());
                                     startActivity(intent);
                                 }
                                 else{

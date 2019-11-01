@@ -35,6 +35,35 @@
         android:textColor="@color/colorAccent"
         tools:ignore="autofill" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/remember_me_chk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="50dp"
+            android:text="@string/remember_me"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/forget_password-link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forgot_password"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="45dp" />
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/btn"
         android:layout_width="match_parent"
