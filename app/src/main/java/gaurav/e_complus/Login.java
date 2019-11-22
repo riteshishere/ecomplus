@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,11 +22,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import gaurav.e_complus.Model.Users;
 import gaurav.e_complus.Prevalent.Prevalent;
+import gaurav.e_complus.Prevalent.RememberUser;
 import io.paperdb.Paper;
 
 public class Login extends AppCompatActivity {
 
-    private EditText phone,pass;
+    private EditText phone,pass,pass1,phone1;
     private Button btn;
     public static final String PREF="";
     private ProgressDialog loadingBar;
@@ -47,6 +49,7 @@ public class Login extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
         chkBoxRememberMe = (CheckBox) findViewById(R.id.remember_me_chk);
         Paper.init(this);
+        previousUser();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +78,14 @@ public class Login extends AppCompatActivity {
 
             private void allowAccessToAccount(final String inputPhone, final String inputPass) {
 
+                if (chkBoxRememberMe.isChecked()){
+                    Paper.book().write(RememberUser.userPhone,inputPhone);
+                    Paper.book().write(RememberUser.userPassword,inputPass);
+                }
+                else{
+                    /* Do nothing for now */
+                }
+
                 final DatabaseReference RootRef;
                 RootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -86,10 +97,9 @@ public class Login extends AppCompatActivity {
 
                             if(userData.getPhone().equals(inputPhone)){
                                 if(userData.getPass().equals(inputPass)){
-                                    if (chkBoxRememberMe.isChecked()){
-                                        Paper.book().write(Prevalent.userPhoneKey,inputPhone);
-                                        Paper.book().write(Prevalent.userPasswordKey,inputPass);
-                                    }
+
+                                    Paper.book().write(Prevalent.userPhoneKey,inputPhone);
+                                    Paper.book().write(Prevalent.userPasswordKey,inputPass);
                                     Paper.book().write(Prevalent.userName,userData.getName());
 
                                     Toast.makeText(Login.this, "Welcome "+userData.getName()+" !", Toast.LENGTH_SHORT).show();
@@ -124,5 +134,17 @@ public class Login extends AppCompatActivity {
 
 
 
+    }
+
+    private void previousUser() {
+        phone1= (EditText) findViewById(R.id.phone);
+        pass1= (EditText) findViewById(R.id.pass);
+
+        Paper.init(this);
+        String userPhone = Paper.book().read(RememberUser.userPhone);
+        String userPass = Paper.book().read(RememberUser.userPassword);
+
+        phone1.setText(userPhone);
+        pass1.setText(userPass);
     }
 }
