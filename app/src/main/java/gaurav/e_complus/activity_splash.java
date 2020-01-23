@@ -76,11 +76,15 @@ public class activity_splash extends AppCompatActivity {
                             startActivity(intent);
                         } else {
                             Toast.makeText(activity_splash.this, "Wrong Credentials, Please try again ...", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(activity_splash.this, MainActivity.class);
+                            startActivity(intent);
                         }
                     }
                 } else {
                     Toast.makeText(activity_splash.this, "Account with this " + inputPhone + " does not exist.", Toast.LENGTH_SHORT).show();
                     Toast.makeText(activity_splash.this, "Please create new account", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(activity_splash.this, MainActivity.class);
+                    startActivity(intent);
                 }
             }
 

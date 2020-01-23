@@ -110,7 +110,7 @@ public class Login extends AppCompatActivity {
                                         Paper.book().write(Prevalent.userName,userData.getName());
                                         Toast.makeText(Login.this, "Welcome "+userData.getName()+" (admin)!", Toast.LENGTH_SHORT).show();
                                         loadingBar.dismiss();
-                                        Intent intent=new Intent(Login.this,AdminAddNewProductActivity.class);
+                                        Intent intent=new Intent(Login.this,AdminCategoryActivity.class);
                                         intent.putExtra("user",userData.getName());
                                         intent.putExtra("phone",userData.getPhone());
                                         startActivity(intent);

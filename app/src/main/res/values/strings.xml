@@ -35,4 +35,6 @@
     <string name="enter_date_of_birth">Enter date of birth</string>
     <string name="choose">Choose</string>
     <string name="today">today</string>
+    <string name="i_m_an_admin">I\'m an admin ?</string>
+    <string name="i_m_not_an_admin">I\'m not an admin ?</string>
 </resources>

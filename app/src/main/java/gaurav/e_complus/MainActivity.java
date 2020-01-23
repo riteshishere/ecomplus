@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ActionBar actionBar=getSupportActionBar();
-        actionBar.setIcon(R.mipmap.ic_launcher_round);
+        actionBar.setIcon(R.mipmap.ic_launcher);
         actionBar.setTitle("   E-com Plus");
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
