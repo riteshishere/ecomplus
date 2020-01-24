@@ -72,7 +72,7 @@ public class activity_splash extends AppCompatActivity {
                     if (userData.getPhone().equals(inputPhone)) {
                         if (userData.getPass().equals(inputPass)) {
                             Toast.makeText(activity_splash.this, "Hey " + userData.getName() + ", Welcome back", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(activity_splash.this, Homepage.class);
+                            Intent intent = new Intent(activity_splash.this, HomeActivity.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(activity_splash.this, "Wrong Credentials, Please try again ...", Toast.LENGTH_SHORT).show();

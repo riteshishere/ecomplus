@@ -30,12 +30,6 @@
         tools:layout="@layout/fragment_tools" />
 
     <fragment
-        android:id="@+id/nav_help"
-        android:name="gaurav.e_complus.ui.help.HelpFragment"
-        android:label="@string/menu_help"
-        tools:layout="@layout/help_fragment" />
-
-    <fragment
         android:id="@+id/nav_share"
         android:name="gaurav.e_complus.ui.share.ShareFragment"
         android:label="@string/menu_share"
